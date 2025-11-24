@@ -78,3 +78,20 @@ if st.session_state.original_pdf_text:
                 st.error("Failed to parse the quiz data. The agent might have returned an invalid JSON.")
             except Exception as e:
                 st.error(f"An error occurred while generating the quiz: {e}")
+
+
+# {	"mcpServers": {
+# 		"context7": {
+# 			"command": "npx",
+# 			"args": [
+# 				"-y",
+# 				"@upstash/context7-mcp"
+# 			],
+# 			"env": {
+# 				"CONTEXT7_API_KEY": "ctx7sk-6aa258d4-eebf-4bb9-bb16-82c56f977724"
+# 			}
+# 		}
+# 	}
+
+
+# }
