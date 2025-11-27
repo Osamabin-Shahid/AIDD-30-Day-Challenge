@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # import os
 # import sys
 
@@ -118,10 +119,15 @@ gemini_provider = OpenAIProvider(
 # -------------------------
 # Summary Agent
 # -------------------------
+=======
+import os
+from agents import Agent, Runner, RunConfig
+>>>>>>> 539cafef22c343296a45d89a856cc310c4bc78d3
 
 async def run_summary_agent(raw_text: str) -> str:
     summary_agent = Agent(
         "SummaryAgent",
+<<<<<<< HEAD
         "You are an expert in summarizing texts. Provide a clean, structured summary of the following text:"
     )
 
@@ -136,15 +142,27 @@ async def run_summary_agent(raw_text: str) -> str:
 # -------------------------
 # Quiz Generator Agent
 # -------------------------
+=======
+        "You are a helpful assistant that summarizes text. Your goal is to produce a clean, structured, and student-friendly summary of the provided text."
+    )
+    result = await Runner.run(summary_agent, raw_text, run_config=RunConfig(model="gemini-pro"))
+    return result.final_output
+>>>>>>> 539cafef22c343296a45d89a856cc310c4bc78d3
 
 async def run_quiz_generator_agent(full_pdf_text: str) -> str:
     quiz_agent = Agent(
         "QuizAgent",
+<<<<<<< HEAD
         """
         You are an expert quiz creator. Based on the text below, generate a mixed-style quiz
         (multiple-choice, short-answer, true/false).
 
         Output must be a single JSON string:
+=======
+        """You are a quiz generation expert. Your task is to read the provided text and generate a mixed-style quiz with multiple-choice questions (MCQs), short-answer questions, and true/false questions.
+
+        Your output MUST be a JSON string that conforms to the following schema:
+>>>>>>> 539cafef22c343296a45d89a856cc310c4bc78d3
         {
           "questions": [
             {
@@ -161,15 +179,23 @@ async def run_quiz_generator_agent(full_pdf_text: str) -> str:
               "answer": "..."
             },
             {
+<<<<<<< HEAD
               "id": 3,
               "type": "true_false",
               "question": "...",
               "answer": "True"
+=======
+                "id": 3,
+                "type": "true_false",
+                "question": "...",
+                "answer": "True"
+>>>>>>> 539cafef22c343296a45d89a856cc310c4bc78d3
             }
           ]
         }
         """
     )
+<<<<<<< HEAD
 
     run_config = RunConfig(
         model="gemini-2.0-flash",
@@ -178,3 +204,7 @@ async def run_quiz_generator_agent(full_pdf_text: str) -> str:
 
     result = await Runner.run(quiz_agent, full_pdf_text, run_config=run_config)
     return str(result.final_output)
+=======
+    result = await Runner.run(quiz_agent, full_pdf_text, run_config=RunConfig(model="gemini-pro"))
+    return result.final_output
+>>>>>>> 539cafef22c343296a45d89a856cc310c4bc78d3
