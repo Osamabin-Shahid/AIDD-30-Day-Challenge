@@ -1,3 +1,14 @@
-.gemini
+# Ignore Gemini local folder
+.gemini/
+.gemini/**
+
+# Ignore environment files
 .env
-.settings.json
+*.env
+
+# Python ignored files
+__pycache__/
+*.pyc
+.env/
+.venv/
+venv/
