@@ -4,7 +4,7 @@
 
 ## ⚠️ Key Constraint: Asynchronous Execution (Async)
 
-The `openai-agents` SDK relies on `asyncio`. The `app.py` file **must** use `asyncio.run()` or a similar helper function to correctly call the asynchronous agent functions within the synchronous Streamlit environment.
+The `openai-agents SDK relies on `asyncio`. The `app.py` file **must** use `asyncio.run()` or a similar helper function to correctly call the asynchronous agent functions within the synchronous gemini API environment. create agent as per gemini api key.
 
 ## 📁 Project Structure Requirements
 
