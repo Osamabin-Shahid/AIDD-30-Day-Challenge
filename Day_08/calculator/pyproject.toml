@@ -1,0 +1,18 @@
+[project]
+name = "calculator"
+version = "0.1.0"
+description = "A simple calculator with basic operations."
+authors = [{ name = "User", email = "user@example.com" }]
+dependencies = [] # No specific runtime dependencies initially
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"] # list of folders that contain the packages
+include = ["calculator*"] # package names should match these globs (or regular expressions)
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
